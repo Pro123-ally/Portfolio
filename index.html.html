@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jinal Purohit — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<style>
+  :root {
+    --ink: #0f0f0f;
+    --ink2: #3a3a3a;
+    --ink3: #767676;
+    --paper: #faf9f6;
+    --paper2: #f3f1ec;
+    --paper3: #eae7e0;
+    --accent: #1a5c3a;
+    --accent2: #2d8a5a;
+    --accent-light: #e4f0ea;
+    --amber: #c97c2b;
+    --amber-light: #fdf0e0;
+    --border: rgba(0,0,0,0.1);
+    --shadow: 0 2px 20px rgba(0,0,0,0.07);
+    --radius: 10px;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,249,246,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink3);
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 88vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 5px 12px; border-radius: 999px;
+    margin-bottom: 2rem;
+    width: fit-content;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 7vw, 72px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--ink2);
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .hero-metrics {
+    display: flex; flex-wrap: wrap; gap: 2.5rem;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .metric-item { display: flex; flex-direction: column; gap: 2px; }
+  .metric-num {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .metric-label { font-size: 12px; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 12px 24px; border-radius: var(--radius);
+    background: var(--accent); color: #fff;
+    font-size: 14px; font-weight: 500;
+    text-decoration: none; font-family: var(--font-body);
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: #155430; transform: translateY(-1px); }
+  .btn-ghost {
+    padding: 12px 24px; border-radius: var(--radius);
+    background: transparent; color: var(--ink);
+    font-size: 14px; font-weight: 500;
+    text-decoration: none; font-family: var(--font-body);
+    border: 1.5px solid var(--border); cursor: pointer;
+    transition: border-color 0.2s, transform 0.1s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+  /* ─── SECTION WRAPPER ─── */
+  section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink3);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    align-items: start;
+  }
+  .about-text p {
+    color: var(--ink2);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+  .about-text p strong { color: var(--ink); font-weight: 600; }
+  .about-aside {
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .aside-card {
+    background: var(--paper2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+  }
+  .aside-card-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink3); margin-bottom: 0.5rem;
+  }
+  .aside-card-val {
+    font-size: 14px; color: var(--ink); font-weight: 500; line-height: 1.5;
+  }
+
+  /* ─── DEMO ─── */
+  #demo { padding-top: 5rem; padding-bottom: 5rem; }
+  .demo-frame {
+    background: var(--paper2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    margin-top: 0.5rem;
+  }
+  .demo-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: var(--amber-light);
+    padding: 4px 10px; border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+  .demo-intro {
+    font-size: 14px; color: var(--ink3); margin-bottom: 1.75rem;
+    max-width: 560px; line-height: 1.6;
+  }
+
+  /* ─── PIPELINE DEMO (embedded) ─── */
+  .pipeline-wrap { font-family: var(--font-body); color: var(--ink); }
+  .pipeline-header { margin-bottom: 1.25rem; }
+  .pipeline-header h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: var(--ink); }
+  .pipeline-header p { font-size: 13px; color: var(--ink3); line-height: 1.5; }
+  .pills-row { display: flex; align-items: center; gap: 6px; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .pill { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 500; border: 0.5px solid var(--border); background: var(--paper); transition: all 0.3s; color: var(--ink3); }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); transition: all 0.3s; flex-shrink: 0; }
+  .pill.active { border-color: var(--accent2); color: var(--ink); }
+  .pill.active .dot { background: var(--accent2); }
+  .pill.done { border-color: var(--accent2); opacity: 0.55; }
+  .pill.done .dot { background: var(--accent2); }
+  .arr { font-size: 14px; color: var(--ink3); }
+  .input-row { display: flex; gap: 8px; margin-bottom: 1.25rem; align-items: flex-start; }
+  .input-row select {
+    flex: 1; padding: 10px 12px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--paper);
+    color: var(--ink); font-size: 13px; font-family: inherit; height: 40px;
+    outline: none;
+  }
+  .input-row select:focus { border-color: var(--accent2); }
+  .run-btn {
+    padding: 0 18px; height: 40px; border-radius: 8px;
+    border: 1.5px solid var(--ink); background: var(--ink);
+    color: var(--paper); font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; font-family: inherit;
+    transition: all 0.2s;
+  }
+  .run-btn:hover { background: var(--accent); border-color: var(--accent); }
+  .run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .cards-area { display: flex; flex-direction: column; gap: 12px; }
+  .agent-card { border: 1px solid var(--border); border-radius: 10px; background: var(--paper); overflow: hidden; }
+  .agent-card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 16px; border-bottom: 1px solid var(--border);
+    background: var(--paper2);
+  }
+  .agent-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .pm-icon { background: #dff0e9; color: #0a5c3e; }
+  .qa-icon { background: #fdf0dd; color: #7a4a10; }
+  .dev-icon { background: #ddeaf8; color: #0e4f8c; }
+  .agent-label { font-size: 13px; font-weight: 600; }
+  .agent-sub { font-size: 12px; color: var(--ink3); margin-left: auto; }
+  .agent-card-body { padding: 14px 16px; font-size: 13px; line-height: 1.75; color: var(--ink2); }
+  .agent-card-body pre { white-space: pre-wrap; font-family: inherit; }
+  .hand-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; padding: 3px 9px; border-radius: 999px;
+    background: var(--accent-light); color: var(--accent);
+    margin-top: 10px; font-weight: 500;
+  }
+  .typing-indicator { color: var(--ink3); font-size: 13px; }
+  .empty-state {
+    text-align: center; padding: 2.5rem 0;
+    color: var(--ink3); font-size: 13px;
+    border: 1px dashed var(--border); border-radius: 10px;
+  }
+
+  /* ─── EXPERIENCE ─── */
+  .exp-list { display: flex; flex-direction: column; gap: 2.5rem; }
+  .exp-item {
+    display: grid; grid-template-columns: 160px 1fr; gap: 2rem;
+    padding-bottom: 2.5rem; border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-date { font-size: 12px; color: var(--ink3); font-weight: 500; padding-top: 3px; line-height: 1.5; }
+  .exp-company { font-size: 12px; color: var(--ink3); margin-top: 3px; }
+  .exp-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .exp-role-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 2px 9px; border-radius: 4px;
+    background: var(--accent-light); color: var(--accent);
+    margin-bottom: 10px; letter-spacing: 0.03em;
+  }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .exp-bullets li {
+    font-size: 14px; color: var(--ink2); line-height: 1.65;
+    padding-left: 14px; position: relative;
+  }
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--ink3);
+    font-size: 12px; top: 3px;
+  }
+  .exp-metrics {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+  }
+  .metric-chip {
+    font-size: 11px; font-weight: 600; padding: 4px 10px;
+    border-radius: 4px; border: 1px solid var(--border);
+    color: var(--ink2); background: var(--paper2);
+  }
+
+  /* ─── SKILLS ─── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+  .skill-group {
+    background: var(--paper2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+  .skill-group-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink3); margin-bottom: 0.75rem;
+  }
+  .skill-tags { display: flex; flex-direction: column; gap: 6px; }
+  .skill-tag { font-size: 13px; color: var(--ink2); font-weight: 400; }
+  .tools-row {
+    margin-top: 1.5rem;
+    background: var(--paper2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem 1.5rem;
+  }
+  .tools-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink); margin-bottom: 0.75rem;
+  }
+  .tools-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tool-chip {
+    font-size: 12px; padding: 4px 11px; border-radius: 6px;
+    background: var(--paper); border: 1px solid var(--border); color: var(--ink2);
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--ink); margin: 0;
+    padding: 5rem 2rem; max-width: 100%;
+  }
+  .contact-inner { max-width: 900px; margin: 0 auto; }
+  #contact .section-label { color: rgba(255,255,255,0.4); }
+  #contact .section-title { color: #fff; }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .contact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius); padding: 1.5rem;
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .contact-card:hover { background: rgba(255,255,255,0.1); }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 18px; flex-shrink: 0;
+  }
+  .contact-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 3px; }
+  .contact-val { font-size: 14px; color: #fff; font-weight: 500; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center; padding: 1.5rem;
+    font-size: 12px; color: rgba(255,255,255,0.3);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.6s ease both; }
+  .hero-tag { animation-delay: 0.05s; }
+  .hero h1 { animation-delay: 0.12s; }
+  .hero-sub { animation-delay: 0.2s; }
+  .hero-metrics { animation-delay: 0.28s; }
+  .hero-ctas { animation-delay: 0.35s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 680px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { gap: 1.25rem; }
+    .nav-links a { font-size: 12px; }
+    section { padding: 3.5rem 1.25rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .hero-metrics { gap: 1.5rem; }
+  }
+  @media (max-width: 420px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">Jinal Purohit</span>
+  <ul class="nav-links">
+    <li><a href="#" onclick="event.preventDefault();document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a></li>
+    <li><a href="#" onclick="event.preventDefault();document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Live Demo</a></li>
+    <li><a href="#" onclick="event.preventDefault();document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a></li>
+    <li><a href="#" onclick="event.preventDefault();document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</a></li>
+    <li><a href="#" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-tag"><i class="ti ti-sparkles"></i> Senior Product Manager</span>
+  <h1>Building products that <em>convert,</em><br> retain, and scale.</h1>
+  <p class="hero-sub">6+ years shipping B2C and fintech products across 10+ markets. I combine deep product thinking with AI fluency to reduce friction and drive measurable growth.</p>
+  <div class="hero-metrics">
+    <div class="metric-item">
+      <span class="metric-num">36%</span>
+      <span class="metric-label">YoY buy conversions</span>
+    </div>
+    <div class="metric-item">
+      <span class="metric-num">100K+</span>
+      <span class="metric-label">Monthly active users</span>
+    </div>
+    <div class="metric-item">
+      <span class="metric-num">5+</span>
+      <span class="metric-label">A/B tests per sprint</span>
+    </div>
+    <div class="metric-item">
+      <span class="metric-num">5hrs</span>
+      <span class="metric-label">SDLC (from 1 day)</span>
+    </div>
+  </div>
+  <div class="hero-ctas">
+    <button class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})"><i class="ti ti-player-play"></i> See Live Demo</button>
+    <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><i class="ti ti-mail"></i> Get in touch</button>
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a Senior Product Manager based in <strong>Kitchener, Canada</strong>, currently at <strong>Apply Digital</strong> driving CPG digital experience and growth — owning B2C and B2B commerce products across 10+ global markets for KraftHeinz.</p>
+      <p>My edge is combining <strong>technical depth with product ownership</strong>. I came up through QA and engineering, which means I hold real conversations on APIs and data models, write sharper requirements, and earn engineering trust faster than most PMs.</p>
+      <p>I'm deeply <strong>AI-fluent</strong> — I use Claude, Gemini, and GenAI tools daily to build workflows, automate processes, and prototype agentic pipelines like the one below. I cut our SDLC from 1 day to 5 hours using AI-powered workflows.</p>
+      <p>Before moving into product, I led QA at <strong>Bitbuy</strong> (crypto trading), <strong>Financeit</strong> (consumer lending), and <strong>IBM</strong> — giving me rare end-to-end product and quality depth across regulated fintech environments.</p>
+    </div>
+    <div class="about-aside">
+      <div class="aside-card">
+        <div class="aside-card-label">Current role</div>
+        <div class="aside-card-val">Senior PM, Digital Experience &amp; Growth<br><span style="color:var(--ink3);font-size:13px">Apply Digital → KraftHeinz</span></div>
+      </div>
+      <div class="aside-card">
+        <div class="aside-card-label">Domain depth</div>
+        <div class="aside-card-val">B2C Funnels · Fintech · AI/LLM · Payments · B2B Commerce</div>
+      </div>
+      <div class="aside-card">
+        <div class="aside-card-label">Education</div>
+        <div class="aside-card-val">Adv. Diploma, Computer Systems Tech — George Brown<br><span style="color:var(--ink3);font-size:13px">B.Eng, Electronics — Gujarat Tech University</span></div>
+      </div>
+      <div class="aside-card">
+        <div class="aside-card-label">Location</div>
+        <div class="aside-card-val">Kitchener, Canada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- LIVE DEMO -->
+<section id="demo">
+  <p class="section-label">Portfolio Work</p>
+  <h2 class="section-title">Agentic PM Workflow Demo</h2>
+
+  <div class="demo-frame">
+    <span class="demo-badge"><i class="ti ti-robot"></i> Live Interactive Demo</span>
+    <p class="demo-intro">Select a product scenario below. A PM agent writes the spec, a QA agent writes the test plan, and a Dev agent generates the task breakdown — each handing off to the next in sequence.</p>
+
+    <!-- PIPELINE -->
+    <div class="pipeline-wrap">
+      <div class="pills-row">
+        <div class="pill" id="pill-pm"><span class="dot"></span> PM agent</div>
+        <span class="arr">›</span>
+        <div class="pill" id="pill-qa"><span class="dot"></span> QA agent</div>
+        <span class="arr">›</span>
+        <div class="pill" id="pill-dev"><span class="dot"></span> Dev agent</div>
+      </div>
+
+      <div class="input-row">
+        <select id="scenario-select">
+          <option value="">Select a scenario...</option>
+          <option value="quote_expiry">Insurance quote expires mid-checkout</option>
+          <option value="claim_dispute">Driver disputes LLM-recommended claim outcome</option>
+          <option value="multi_vehicle">Multi-vehicle consolidation with active claim risk</option>
+          <option value="voice_coverage">Voice agent gives confident answer before policy parsed</option>
+          <option value="premium_spike">User asks why premium spiked after accident</option>
+        </select>
+        <button class="run-btn" id="run-btn" onclick="runPipeline()">Run agents</button>
+      </div>
+
+      <div class="cards-area" id="cards-area">
+        <div class="empty-state" id="empty-state">Select a scenario and run the agents to see the pipeline output.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Work History</p>
+  <h2 class="section-title">Experience</h2>
+  <div class="exp-list">
+
+    <!-- Apply Digital: Senior PM -->
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">Aug 2023 — Present</div>
+        <div class="exp-company">Apply Digital</div>
+      </div>
+      <div>
+        <div class="exp-title">Senior Product Manager</div>
+        <span class="exp-role-tag">Digital Experience &amp; Growth</span>
+        <ul class="exp-bullets">
+          <li>Drove 36% YoY lift in buy conversions by identifying and optimizing high-intent touchpoints across B2C web and mobile funnels serving 100K+ MAU.</li>
+          <li>Increased user engagement by 25% through coordinated multi-channel growth campaigns tied to product surface changes across 10+ global markets.</li>
+          <li>Led end-to-end product strategy for a B2B commerce platform — owning discovery, requirements, roadmap, and delivery for KraftHeinz business customers globally.</li>
+          <li>Shipped product listing pages, detail pages, search indexer, and homepage templates using Algolia and Salsify, leveraging Next.js and GCP familiarity to define clear technical requirements.</li>
+          <li><strong style="color:var(--accent)">Built AI-powered PM workflows</strong> using Claude and Gemini — automating spec writing, test planning, and dev task generation — reducing SDLC from 1 day to 5 hours and cutting go-to-market time by 2 weeks.</li>
+          <li><strong style="color:var(--accent)">Designed and shipped this agentic pipeline demo</strong> (above) as a portfolio artifact — a live PM → QA → Dev agent workflow running on real product scenarios.</li>
+          <li>Partnered with Engineering, Marketing, Data, and Design across sprint planning, backlog prioritization, and roadmap strategy to maintain fast, high-quality delivery.</li>
+        </ul>
+        <div class="exp-metrics">
+          <span class="metric-chip">36% conversion lift</span>
+          <span class="metric-chip">25% engagement increase</span>
+          <span class="metric-chip">100K+ MAU</span>
+          <span class="metric-chip">SDLC: 1 day → 5 hrs</span>
+          <span class="metric-chip">10+ markets</span>
+          <span class="metric-chip" style="background:var(--accent-light);color:var(--accent);border-color:var(--accent)">AI workflow builder</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apply Digital: QA Lead -->
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">Sep 2022 — Aug 2023</div>
+        <div class="exp-company">Apply Digital</div>
+      </div>
+      <div>
+        <div class="exp-title">QA Lead</div>
+        <span class="exp-role-tag">Full-Stack Quality &amp; Delivery</span>
+        <ul class="exp-bullets">
+          <li>Built a test automation framework from scratch — defining technical approach, tooling decisions, and coverage standards across product features.</li>
+          <li>Translated business and acceptance requirements into detailed test scenarios, owning edge case identification across the full product surface.</li>
+          <li>Drove cross-functional coordination across Engineering, Product, and Design to surface risks early and maintain release quality in an agile environment.</li>
+          <li>Contributed to sprint ceremonies including planning, standups, and retrospectives — influencing delivery sequencing and flagging product quality risks before they reached users.</li>
+          <li>Mentored team members on automation best practices, taking on informal leadership beyond core QA scope.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bitbuy -->
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">Jul 2021 — Sep 2022</div>
+        <div class="exp-company">Bitbuy</div>
+      </div>
+      <div>
+        <div class="exp-title">QA Lead</div>
+        <span class="exp-role-tag">Crypto Trading Platform · Fintech</span>
+        <ul class="exp-bullets">
+          <li>Operated in a high-stakes crypto trading environment where transaction accuracy, balance correctness, and customer trust were non-negotiable.</li>
+          <li>Collaborated with Product and Engineering to define acceptance criteria and validate critical trading and financial workflows before every release.</li>
+          <li>Shaped sprint planning and backlog grooming by surfacing edge cases and technical constraints early enough to influence product decisions before development began.</li>
+          <li>Built and maintained automated test coverage across core trading platform features, enabling faster release cycles in an AML/KYC-regulated environment.</li>
+        </ul>
+        <div class="exp-metrics">
+          <span class="metric-chip">Zero compliance gaps</span>
+          <span class="metric-chip">AML/KYC regulated</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Financeit -->
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">Feb 2019 — Jul 2021</div>
+        <div class="exp-company">Financeit</div>
+      </div>
+      <div>
+        <div class="exp-title">QA Lead</div>
+        <span class="exp-role-tag">Consumer Lending · Regulated Fintech</span>
+        <ul class="exp-bullets">
+          <li>Delivered consumer lending product features across onboarding, loan activities, and account management in a regulated financial environment.</li>
+          <li>Translated business and compliance requirements into detailed acceptance criteria — bridging stakeholder needs and Engineering execution.</li>
+          <li>Maintained 78% automated test coverage across core lending platform features, enabling faster release velocity without compromising data integrity or regulatory compliance.</li>
+          <li>Shaped product discovery by identifying edge cases, data risks, and workflow gaps early — influencing feature scoping and sequencing before development began.</li>
+          <li>Validated end-to-end data flows supporting statements, financial metrics, and reporting, ensuring correctness across the pipeline.</li>
+        </ul>
+        <div class="exp-metrics">
+          <span class="metric-chip">78% automated coverage</span>
+          <span class="metric-chip">Regulated lending environment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- IBM -->
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">Jan 2018 — Feb 2019</div>
+        <div class="exp-company">IBM</div>
+      </div>
+      <div>
+        <div class="exp-title">QA Analyst</div>
+        <span class="exp-role-tag">Test Automation · BDD</span>
+        <ul class="exp-bullets">
+          <li>Built automation test scenarios using BDD — Selenium, Java, Cucumber, Page Object Model, JUnit, and Maven — across cross-browser and end-to-end test suites.</li>
+          <li>Configured CI/CD pipeline integration using Jenkins, maintaining automation code in Git and running nightly build checks.</li>
+          <li>Contributed to UAT, regression testing, and defect review board across multiple customer releases.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Expertise</p>
+  <h2 class="section-title">Skills &amp; Tools</h2>
+
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Growth &amp; Funnels</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Growth &amp; Funnel Optimization</span>
+        <span class="skill-tag">A/B Testing &amp; Experimentation</span>
+        <span class="skill-tag">Acquisition &amp; Activation Funnels</span>
+        <span class="skill-tag">Customer Engagement &amp; Retention</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Product &amp; Analytics</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Product Strategy &amp; Portfolio</span>
+        <span class="skill-tag">Product Discovery &amp; User Research</span>
+        <span class="skill-tag">Funnel &amp; Cohort Analysis</span>
+        <span class="skill-tag">KPI Ownership &amp; Data-Driven Decisions</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Delivery &amp; Leadership</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Agile &amp; Scrum Delivery</span>
+        <span class="skill-tag">Stakeholder Management</span>
+        <span class="skill-tag">Team Leadership &amp; Delivery</span>
+        <span class="skill-tag">B2B Commerce &amp; Payments</span>
+        <span class="skill-tag">AI Workflow Automation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools-row">
+    <div class="tools-title">Tools</div>
+    <div class="tools-list">
+      <span class="tool-chip">GA4</span>
+      <span class="tool-chip">Segment</span>
+      <span class="tool-chip">Figma</span>
+      <span class="tool-chip">JIRA</span>
+      <span class="tool-chip">Confluence</span>
+      <span class="tool-chip">REST APIs</span>
+      <span class="tool-chip">GCP</span>
+      <span class="tool-chip">Claude</span>
+      <span class="tool-chip">Gemini</span>
+      <span class="tool-chip">Prompt Engineering</span>
+      <span class="tool-chip">GenAI Tools</span>
+      <span class="tool-chip">Contentful CMS</span>
+      <span class="tool-chip">Salsify</span>
+      <span class="tool-chip">Algolia</span>
+      <span class="tool-chip">Stripe</span>
+      <span class="tool-chip">SQL</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:5rem;padding-bottom:5rem;background:var(--ink);max-width:100%">
+  <div class="contact-inner">
+    <p class="section-label" style="color:rgba(255,255,255,0.4)">Let's Connect</p>
+    <h2 class="section-title" style="color:#fff;margin-bottom:2rem">Get in touch</h2>
+    <div class="contact-grid">
+      <a class="contact-card" href="#" onclick="event.preventDefault();window.open('mailto:jinalpurohit29@gmail.com')">
+        <div class="contact-icon"><i class="ti ti-mail"></i></div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-val">jinalpurohit29@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-card" href="#" onclick="event.preventDefault();window.open('https://linkedin.com/in/purohitjinal','_blank')">
+        <div class="contact-icon"><i class="ti ti-brand-linkedin"></i></div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-val">linkedin.com/in/purohitjinal</div>
+        </div>
+      </a>
+      <a class="contact-card" href="#" onclick="event.preventDefault();window.open('tel:+14168877624')">
+        <div class="contact-icon"><i class="ti ti-phone"></i></div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-val">+1 416.887.7624</div>
+        </div>
+      </a>
+      <div class="contact-card" style="cursor:default">
+        <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-val">Kitchener, Canada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Jinal Purohit · Senior Product Manager</footer>
+
+<!-- PIPELINE SCRIPT -->
+<script>
+const SCENARIOS = {
+  quote_expiry: {
+    label: "Insurance quote expires mid-checkout",
+    pm: `Problem statement:\nUsers abandon checkout when their insurance quote silently expires mid-flow, resulting in failed binds and a broken trust moment at the highest-intent point in the funnel.\n\nUser story:\nAs a user, I want to be notified before my quote expires so I can refresh it without losing my progress or re-entering my information.\n\nAcceptance criteria:\n• System detects quote expiry approaching (within 5 min) and surfaces an inline warning\n• User can refresh quote with one tap — no form re-entry required\n• Refreshed quote diff (price change if any) is shown transparently before confirmation\n• If quote expires mid-payment, transaction is blocked and user is shown a clear recovery path\n\nSuccess metrics:\n• Checkout abandonment rate reduced by 20%+\n• Quote refresh completion rate > 85%\n• Support tickets related to "quote not valid" reduced by 40%\n\nLLM/automation opportunity:\nThe LLM can predict likelihood of quote expiry based on session duration patterns and proactively trigger refresh before the user hits the wall.`,
+    qa: `Happy path:\n• User is in checkout, quote expires warning appears at 5-min mark, user taps refresh, new quote loads with price diff shown, user completes purchase\n• Quote price stays same on refresh — user sees "no change" confirmation and proceeds\n• User refreshes quote on mobile mid-flow — state is preserved, scroll position maintained\n\nEdge cases:\n• Quote expires at exact moment user taps "confirm payment" — system must block transaction and not double-charge\n• Price increases significantly on refresh — user abandons, session should be logged for pricing review\n• User has poor connectivity — refresh call times out, fallback message must not mislead user about coverage status\n\nGuardrail checks:\n• LLM expiry prediction must not trigger false positives — premature warnings erode trust\n• Any LLM-generated explanation of price change must cite actual insurer reason, not hallucinate a cause\n\nRegression risk:\nRetest the standard checkout happy path and payment confirmation flow.`,
+    dev: `API / data requirements:\n• Quote expiry timestamp must be included in /quotes response payload\n• New endpoint needed: POST /quotes/:id/refresh — returns updated quote with delta\n• Session state service must persist form data across quote refresh lifecycle\n\nFrontend tasks:\n• Build QuoteExpiryBanner component — inline warning with countdown and one-tap refresh CTA\n• Update checkout confirmation screen to display price diff badge on refresh\n• Handle loading/error states for refresh call with clear user messaging\n\nBackend / LLM tasks:\n• Build session duration analytics model to predict expiry risk\n• Implement quote diff calculation service — structured delta (old price, new price, reason code)\n• Add guardrail layer to LLM explanation of price change\n\nEstimated complexity: M`
+  },
+  claim_dispute: {
+    label: "Driver disputes LLM-recommended claim outcome",
+    pm: `Problem statement:\nWhen automation recommends a claim outcome (e.g. not covered, partial payout), users have no clear path to dispute the recommendation — eroding trust at the most emotionally charged moment in car ownership.\n\nUser story:\nAs a user, I want to escalate a claim recommendation I disagree with so that a human reviews my case and I feel heard, not dismissed by an algorithm.\n\nAcceptance criteria:\n• Every LLM-generated claim recommendation includes a visible "Dispute this" option\n• Dispute flow captures user's reason in free text (max 500 chars) and attaches to claim record\n• User receives acknowledgement within 24 hours and status updates throughout\n• Human reviewer sees full LLM rationale alongside user's dispute context\n\nSuccess metrics:\n• Dispute submission rate used as proxy for trust signal improvement\n• Resolution time under 3 business days for 80% of disputes\n• CSAT on claim resolution improves by 15%\n\nLLM/automation opportunity:\nThe LLM can pre-screen disputes to route slam-dunk cases to auto-resolution and escalate genuinely ambiguous ones to senior reviewers.`,
+    qa: `Happy path:\n• User sees claim recommendation, taps "Dispute this", submits reason, receives confirmation with timeline\n• Dispute reviewed, outcome updated, user notified with plain-language explanation\n\nEdge cases:\n• User submits dispute with no text — must be blocked with inline validation\n• Claim is already resolved when user tries to dispute — system must surface correct status\n• LLM auto-resolution incorrectly overrides a valid dispute — escalation path must exist\n\nGuardrail checks:\n• LLM rationale shown to human reviewers must be factually grounded, not post-hoc rationalisation\n• Dispute acknowledgement messaging must not imply a guaranteed outcome change\n\nRegression risk:\nRetest the standard claim status and notification flows.`,
+    dev: `API / data requirements:\n• New endpoint: POST /claims/:id/dispute — accepts reason text, attaches to claim record\n• Claims detail response must include: llm_rationale, dispute_window_open flag, current_status\n• Reviewer dashboard API must surface dispute context alongside original LLM decision\n\nFrontend tasks:\n• Build DisputeFlow component — entry point on claim detail, text input, confirmation screen\n• Build ClaimStatusTracker — real-time status with dispute state included\n• Reviewer dashboard: side-by-side LLM rationale + user dispute reason\n\nBackend / LLM tasks:\n• Build dispute triage model — classifies disputes as auto-resolvable vs. human-required\n• Implement 24-hour acknowledgement notification service\n• Audit log for all LLM claim recommendations with version tracking\n\nEstimated complexity: M`
+  },
+  multi_vehicle: {
+    label: "Multi-vehicle consolidation with active claim risk",
+    pm: `Problem statement:\nUsers who try to consolidate multiple vehicles onto a single policy mid-claim risk coverage gaps or claim invalidation — but the product offers no guardrails or guidance at this decision point.\n\nUser story:\nAs a user managing multiple vehicles, I want to consolidate my policies safely so I understand any active claim risk before I commit.\n\nAcceptance criteria:\n• System detects active or pending claims on any vehicle before consolidation is initiated\n• User is shown a risk summary with plain-language impact of consolidating during an active claim\n• Consolidation can be paused and scheduled for post-claim resolution\n• All affected insurers are notified automatically if consolidation proceeds\n\nSuccess metrics:\n• Zero consolidations processed that invalidate an active claim\n• 70%+ of at-risk users choose to defer consolidation after seeing the risk summary\n• Support escalations related to post-consolidation claim issues reduced by 50%\n\nLLM/automation opportunity:\nThe LLM can synthesize claim status, policy terms, and insurer rules to generate a personalised risk summary — replacing static legal disclaimers with actionable guidance.`,
+    qa: `Happy path:\n• User initiates consolidation, system detects no active claims, flow proceeds normally\n• Active claim detected — user sees risk summary, chooses to defer, receives scheduled reminder\n\nEdge cases:\n• Claim filed during consolidation window — system must detect and pause the in-progress flow\n• User has claims in multiple states (one pending, one resolved) — summary must correctly distinguish\n• Insurer notification fails for one vehicle — partial failure handling must not silently proceed\n\nGuardrail checks:\n• LLM risk summary must not overstate or understate coverage impact — must be grounded in actual policy terms\n• "Proceed anyway" path must require explicit user confirmation with legal acknowledgement\n\nRegression risk:\nRetest standard policy consolidation and multi-vehicle add flows.`,
+    dev: `API / data requirements:\n• Claims status check endpoint must be called as pre-condition in consolidation flow: GET /policies/:id/claim-status\n• New endpoint: POST /consolidations/preview — returns risk assessment before committing\n• Insurer notification service must support batch notify with per-insurer success/failure tracking\n\nFrontend tasks:\n• Build ConsolidationRiskBanner — surfaces claim conflict with defer and proceed options\n• Build DeferralScheduler — lets user pick a post-claim date for consolidation\n• Update multi-vehicle management UI to show claim status badges per vehicle\n\nBackend / LLM tasks:\n• Build LLM risk summary generator — input: claim status + policy terms, output: plain-language risk summary with guardrails\n• Implement consolidation deferral queue with date-based trigger\n• Insurer batch notification service with retry and failure alerting\n\nEstimated complexity: L`
+  },
+  voice_coverage: {
+    label: "Voice agent gives confident answer before policy parsed",
+    pm: `Problem statement:\nThe voice agent answers coverage questions confidently before the user's policy PDF has been fully parsed — creating liability exposure and eroding user trust when the answer turns out to be wrong.\n\nUser story:\nAs a user, I want the voice agent to only answer coverage questions it can actually verify so I don't make decisions based on incorrect information.\n\nAcceptance criteria:\n• Voice agent checks policy parse status before answering any coverage question\n• If policy is unparsed or partially parsed, agent surfaces a "can't confirm yet" response with ETA\n• All coverage answers include a source citation (policy section + page reference)\n• Low-confidence answers are routed to human review queue before being delivered\n\nSuccess metrics:\n• Coverage answer accuracy rate > 98% (verified against ground-truth policy data)\n• "Can't confirm yet" response rate decreases as parse pipeline improves — tracked weekly\n• User complaints related to incorrect coverage answers reduced by 60%\n\nLLM/automation opportunity:\nThe LLM can extract structured coverage data from PDFs with section-level citations — enabling it to answer precisely and cite its source rather than generating from general insurance knowledge.`,
+    qa: `Happy path:\n• User asks coverage question, policy is fully parsed, agent answers with section citation\n• Policy partially parsed — agent responds with "can't confirm yet" and gives ETA\n• Low-confidence answer auto-routed to human, user informed of review timeline\n\nEdge cases:\n• Policy PDF is scanned image (non-text) — extraction pipeline must flag and not attempt answer\n• User asks about a coverage type not present in their policy — agent must say "not covered" not "I don't know"\n• Multiple policies on account — agent must correctly identify which policy applies to the question\n\nGuardrail checks:\n• Agent must never extrapolate beyond parsed policy data — no general insurance knowledge substitution\n• Citation must reference actual page and section, not a fabricated reference\n\nRegression risk:\nRetest voice agent FAQ flows and standard coverage query paths.`,
+    dev: `API / data requirements:\n• Policy parse status must be exposed: GET /policies/:id/parse-status — returns parsed, partial, pending, failed\n• Coverage query handler must call parse-status as a pre-check before LLM inference\n• Citation format: { section: string, page: number, confidence_score: float }\n\nFrontend tasks:\n• Build PolicyParseStatusIndicator — shown in policy detail and voice agent handoff UI\n• Update coverage answer display to include citation chip with expandable source view\n\nBackend / LLM tasks:\n• Build policy PDF extraction pipeline — structured coverage data with section-level citations\n• Implement parse-check middleware in voice agent query handler\n• Build confidence scoring layer — routes low-confidence answers to human review queue\n\nEstimated complexity: L`
+  },
+  premium_spike: {
+    label: "User asks why premium spiked after accident",
+    pm: `Problem statement:\nUsers who experience a premium increase after an accident receive no clear explanation — leading to confusion, support escalations, and churn at a critical retention moment.\n\nUser story:\nAs a user, I want a plain-language explanation of why my premium increased after my accident so I understand what changed and what I can do about it.\n\nAcceptance criteria:\n• Premium change notification includes an explanation screen: reason for increase, contributing factors, expected duration\n• Explanation is generated from actual insurer rate change data — not generic insurance copy\n• User is shown alternative quotes from other insurers if savings are available post-increase\n• "What can I improve?" CTA shows actionable steps to reduce premium over time\n\nSuccess metrics:\n• Support tickets related to premium confusion reduced by 35%\n• Alternative quote click-through rate > 25% on premium spike screen\n• 90-day retention rate of users who see explanation screen improves by 10%\n\nLLM/automation opportunity:\nThe LLM can synthesize insurer rate change data into a clear, empathetic explanation tailored to the user's specific situation — replacing generic copy with a personalised message that builds trust.`,
+    qa: `Happy path:\n• User receives premium increase notification, taps to view explanation, sees clear reason with duration and alternatives\n• Alternative quotes available — user taps, sees comparison, converts to new insurer within same session\n• No alternatives available — user sees honest "no better options right now" with "remind me in 30 days" option\n\nEdge cases:\n• Insurer provides rate change data with missing reason code — LLM must not fabricate a reason\n• User has multiple accidents — explanation must attribute premium change correctly across incidents\n• Premium increase is a billing error — explanation flow must include "dispute this charge" path\n\nGuardrail checks:\n• LLM explanation must never assign fault or imply legal liability\n• Alternative quote data must be real-time, not cached — stale quotes shown at this moment destroy trust\n\nRegression risk:\nRetest standard premium display and renewal notification flows.`,
+    dev: `API / data requirements:\n• Rate change event must include: reason_code, contributing_factors[], effective_date, expected_duration\n• New endpoint: GET /policies/:id/premium-change-summary — structured explanation data for LLM input\n• Alternative quotes endpoint must support real-time fetch with post-incident flag\n\nFrontend tasks:\n• Build PremiumChangeExplanationScreen — reason, factors, duration, alternatives, and "what can I improve?" CTA\n• Build AlternativeQuoteCarousel — real-time quotes sorted by savings, one-tap switch initiation\n• Add premium history chart to policy detail view with incident markers\n\nBackend / LLM tasks:\n• Build LLM explanation generator — input: structured rate change data, output: plain-language explanation with guardrails\n• Build real-time alternative quote fetcher with post-incident context\n• Implement improvement recommendation engine — maps user profile to available discount programs\n\nEstimated complexity: M`
+  }
+};
+
+function setPill(id, state) {
+  document.getElementById('pill-' + id).className = 'pill ' + (state || '');
+}
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+async function typeText(elId, text, delay = 6) {
+  const el = document.getElementById(elId);
+  el.innerHTML = '';
+  for (let i = 0; i < text.length; i++) {
+    el.textContent += text[i];
+    if (i % 4 === 0) await sleep(delay);
+  }
+}
+
+async function runPipeline() {
+  const sel = document.getElementById('scenario-select');
+  const key = sel.value;
+  if (!key) return;
+  const scenario = SCENARIOS[key];
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.textContent = 'Running...';
+  ['pm','qa','dev'].forEach(id => setPill(id, ''));
+  const area = document.getElementById('cards-area');
+  area.innerHTML = '';
+
+  const agents = [
+    { id: 'pm', label: 'PM agent', sub: 'Product spec', iconClass: 'pm-icon', icon: 'ti-layout-list', output: scenario.pm, next: 'QA agent' },
+    { id: 'qa', label: 'QA agent', sub: 'Test plan', iconClass: 'qa-icon', icon: 'ti-checklist', output: scenario.qa, next: 'Dev agent' },
+    { id: 'dev', label: 'Dev agent', sub: 'Task breakdown', iconClass: 'dev-icon', icon: 'ti-code', output: scenario.dev, next: null }
+  ];
+
+  for (let i = 0; i < agents.length; i++) {
+    const a = agents[i];
+    setPill(a.id, 'active');
+    area.insertAdjacentHTML('beforeend', `
+      <div class="agent-card" id="card-${a.id}">
+        <div class="agent-card-head">
+          <div class="agent-icon ${a.iconClass}"><i class="ti ${a.icon}"></i></div>
+          <span class="agent-label">${a.label}</span>
+          <span class="agent-sub">${a.sub}</span>
+        </div>
+        <div class="agent-card-body" id="body-${a.id}">
+          <span class="typing-indicator">Processing...</span>
+        </div>
+      </div>
+    `);
+    await sleep(900);
+    const body = document.getElementById('body-' + a.id);
+    body.innerHTML = `<pre id="pre-${a.id}"></pre>`;
+    await typeText('pre-' + a.id, a.output, 6);
+    if (a.next) {
+      body.innerHTML += `<div class="hand-badge"><i class="ti ti-arrow-right" style="font-size:11px"></i> Handing off to ${a.next}</div>`;
+    }
+    setPill(a.id, 'done');
+    await sleep(400);
+  }
+  btn.disabled = false;
+  btn.textContent = 'Run agents';
+}
+</script>
+
+</body>
+</html>
